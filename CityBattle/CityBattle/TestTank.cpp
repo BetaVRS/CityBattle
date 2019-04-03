@@ -1,4 +1,4 @@
-#include "TestTank.h"
+ï»¿#include "TestTank.h"
 #include "struct.h"
 
 int TestTank::mDPXY[4][2] = { {-1,0},{0,-1},{1,0},{0,1} };
@@ -61,7 +61,7 @@ bool TestTank::CheckMoveable()
 	int tempx = mTankX + mDPXY[mDir][_CX];
 	int tempy = mTankY + mDPXY[mDir][_CY];
 
-	//±ß½ç¼ì²â
+	//è¾¹ç•Œæ£€æµ‹
 	if (tempx<BOX_SIZE || tempy<BOX_SIZE || tempx>CANVAS_WIDTH - BOX_SIZE || tempy>CANVAS_HEIGT - BOX_SIZE)
 	{
 		switch (mDir)
@@ -74,7 +74,7 @@ bool TestTank::CheckMoveable()
 		}
 		return false;
 	}
-	//ÕÏ°­Îï¼ì²â
+	//éšœç¢ç‰©æ£€æµ‹
 
 	int xi = tempx / SMALL_BOX_SIZE;
 	int yj = tempy / SMALL_BOX_SIZE;

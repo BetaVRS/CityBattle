@@ -1,4 +1,4 @@
-#include "TimeClock.h"
+﻿#include "TimeClock.h"
 
 TimeClock::TimeClock()
 {

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "struct.h"
 #include "TestTank.h"
 using namespace std;
@@ -71,14 +71,14 @@ int main()
 	initgraph(WIN_WIDTH, WIN_HEIGHT,SHOWCONSOLE);
 
 	TestTank player(&map);
-	BeginBatchDraw();	//¿ªÊ¼ÅúÁ¿»æÍ¼
+	BeginBatchDraw();	//å¼€å§‹æ‰¹é‡ç»˜å›¾
 	IMAGE canvas(CANVAS_WIDTH, CANVAS_HEIGT);
 	loadimg();
 	HDC win_hdc = GetImageHDC();
 	HDC canvas_hdc = GetImageHDC(&canvas);
 	
 	player.ShowBox();
-	//²âÊÔÖ÷Ñ­»·
+	//æµ‹è¯•ä¸»å¾ªç¯
 	while (true)
 	{
 		player.PlayerControl();

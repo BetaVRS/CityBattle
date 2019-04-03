@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #define _EMPTY			0
 #define _WALL			1
