@@ -43,8 +43,6 @@ void TestTank::DrawTank(const HDC & canvas)
 
 void TestTank::Move(int new_dir)
 {
-
-
 	if (mDir != new_dir)
 	{
 		mDir = new_dir;
@@ -74,8 +72,8 @@ bool TestTank::CheckMoveable()
 		}
 		return false;
 	}
-	//障碍物检测
 
+	//障碍物检测
 	int xi = tempx / SMALL_BOX_SIZE;
 	int yj = tempy / SMALL_BOX_SIZE;
 

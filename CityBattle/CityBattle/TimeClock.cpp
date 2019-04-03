@@ -24,7 +24,7 @@ bool TimeClock::IsTimeOut()
 	QueryPerformanceCounter(&litmp);
 	QPart2 = litmp.QuadPart;
 
-	if (((double)(QPart2 - QPart1) * 1000) / clkFreq > deltaT)
+	if ((double)((QPart2 - QPart1) * 1000) / clkFreq > deltaT)
 	{
 		QPart1 = QPart2;
 		return true;

@@ -1,11 +1,11 @@
 ﻿#pragma once
 
 #define _EMPTY			0
-#define _WALL			1
-#define _STONE			2
-#define _RIVER			3
-#define _FOREST			4
-#define _ICE			5
+#define _FOREST			1
+#define _ICE			2
+#define _WALL			3
+#define _RIVER			4
+#define _STONE			5
 
 #define _CX				0
 #define _CY				1

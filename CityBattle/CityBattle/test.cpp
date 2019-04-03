@@ -1,6 +1,7 @@
 ﻿#include "stdafx.h"
 #include "struct.h"
 #include "TestTank.h"
+#include "TimeClock.h"
 using namespace std;
 
 void loadimg();
@@ -68,8 +69,14 @@ IMAGE wall, stone, empty, background;
 
 int main()
 {
+	for (int i = 0; i < 26; i++)
+		for (int j = 0; j < 26; j++)
+			if (map.box_8[i][j] == 2)
+				map.box_8[i][j] = _STONE;
+
 	initgraph(WIN_WIDTH, WIN_HEIGHT,SHOWCONSOLE);
 
+	TimeClock timer;
 	TestTank player(&map);
 	BeginBatchDraw();	//开始批量绘图
 	IMAGE canvas(CANVAS_WIDTH, CANVAS_HEIGT);
@@ -78,16 +85,18 @@ int main()
 	HDC canvas_hdc = GetImageHDC(&canvas);
 	
 	player.ShowBox();
+	timer.SetDeltaT(10);
 	//测试主循环
 	while (true)
 	{
-		player.PlayerControl();
-		RefreshMap(&map, &canvas);
-		player.DrawTank(canvas_hdc);
-		StretchBlt(win_hdc, 0, 0, WIN_WIDTH, WIN_HEIGHT, canvas_hdc, 0, 0, CANVAS_WIDTH, CANVAS_HEIGT, SRCCOPY);
-		FlushBatchDraw();
-
-		Sleep(1);
+		if (timer.IsTimeOut())
+		{
+			player.PlayerControl();
+			RefreshMap(&map, &canvas);
+			player.DrawTank(canvas_hdc);
+			StretchBlt(win_hdc, 0, 0, WIN_WIDTH, WIN_HEIGHT, canvas_hdc, 0, 0, CANVAS_WIDTH, CANVAS_HEIGT, SRCCOPY);
+			FlushBatchDraw();
+		}
 	}
 
 	EndBatchDraw();
