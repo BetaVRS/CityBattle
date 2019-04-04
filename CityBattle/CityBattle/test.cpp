@@ -1,6 +1,3 @@
-﻿//分支测试--王嘉成
-
-
 #include "stdafx.h"
 #include "struct.h"
 #include "TestTank.h"
