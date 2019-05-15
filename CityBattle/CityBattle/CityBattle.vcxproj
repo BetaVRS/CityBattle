@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Music.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="TestTank.cpp" />
     <ClCompile Include="TimeClock.cpp" />
@@ -122,6 +123,7 @@
   <ItemGroup>
     <ClInclude Include="EnemyClass.h" />
     <ClInclude Include="GameControl.h" />
+    <ClInclude Include="music.h" />
     <ClInclude Include="PlayerClass.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="struct.h" />
